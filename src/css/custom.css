@@ -17,6 +17,9 @@
     background-color: #32b356;
     color: #495057;
   }
+  .custom-drpdwn:hover {
+    background-color: #495057;
+  }
   /*
   .nav-link, .js-scroll-trigger, .dropdown-item {
       color: #495057;
