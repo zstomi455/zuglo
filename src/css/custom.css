@@ -7,3 +7,29 @@
 .bg-primary {
     background-color: #32b356!important;
 }
+.dropdown-item-text, .dropdown-item.active, .dropdown-item:active {
+    color: #495057;
+    display: block;
+    padding: 0.25rem 1.5rem;
+    background-color: #32b356;
+  }
+  .dropdown-menu {
+    background-color: #32b356;
+    color: #495057;
+  }
+  /*
+  .nav-link, .js-scroll-trigger, .dropdown-item {
+      color: #495057;
+  }
+  .nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-link .js-scroll-trigger .dropdown-item:active, .dropdown-item:hover, .dropdown-item:focus{
+    color: #495057;
+}*/
+
+ 
