@@ -18,7 +18,7 @@
 
     <!-- zuglo - Custom styles for this webpage -->
     <link href="css/custom.css" rel="stylesheet">
-  
+
   </head>
 
   <body id="page-top">
@@ -46,8 +46,12 @@
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#tisztajovoert">A Tiszta Jövőért Közhasznú Alapítvány</a>
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zumcsa">Zumcsa</a>
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#lea">Lelki Egészségvédő Alapítvány (LEA)</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zknp">Zuglói Közbiztonsági Non-Profit Kft</a>
               </div>
             </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#interviews">Felépülési Interjúk</a>
             </li>
           </ul>
         </div>
@@ -76,8 +80,57 @@
               </p>
               <br>
               <br>
-              <img src="terkep-minta.jpg" alt="terkep">
           </div>
+          <div id="map"></div>
+          <script>
+
+                // This example displays a marker at the center of Australia.
+                // When the user clicks the marker, an info window opens.
+
+                function initMap() {
+                  var uluru = {lat: -25.363, lng: 131.044};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,
+                    center: uluru
+                  });
+
+                  var contentString = '<div id="content">'+
+                      '<div id="siteNotice">'+
+                      '</div>'+
+                      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+                      '<div id="bodyContent">'+
+                      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                      'sandstone rock formation in the southern part of the '+
+                      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+                      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+                      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+                      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+                      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+                      'Aboriginal people of the area. It has many springs, waterholes, '+
+                      'rock caves and ancient paintings. Uluru is listed as a World '+
+                      'Heritage Site.</p>'+
+                      '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+                      'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+                      '(last visited June 22, 2009).</p>'+
+                      '</div>'+
+                      '</div>';
+
+                  var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                  });
+
+                  var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map,
+                    title: 'Uluru (Ayers Rock)'
+                  });
+                  marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                  });
+                }
+            </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoYvWmyfdKxz39mAzaRU-4f17cYm5A-xA&callback=initMap"
+          async defer></script>
         </div>
       </div>
     </section>
@@ -208,17 +261,44 @@
                     <p class="lead">
                     <b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>
                     <b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>
-                    <b>Telefon:</b> Herczeg Andrea +36-1-221-7068 H-Cs 11-14h<br>
+                    <b>Telefon:</b> <i>Herczeg Andrea</i> +36-1-221-7068 (H-Cs 11-14h)<br>
                     <b>Üzenetrögzítő és fax:</b> 06-1-384-1961<br>
                     <b>E-mail:</b> lea.pszichologia@gmail.com<br>
                     </p>
+                    <table class="table table-bordered  text-center"><!--table-hover-->
+                      <thead>
+                        <tr>
+                          <th colspan="7">Nyitva tartás:</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">hétfő</th>
+                          <th scope="col">kedd</th>
+                          <th scope="col">szerda</th>
+                          <th scope="col">csütörtök</th>
+                          <th scope="col">péntek</th>
+                          <th scope="col">szombat</th>
+                          <th scope="col">vasárnap</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                        </tr>
+                      </tbody>
+                    </table>
               </div>
             </div>
           </div>
         </section>
     
     
-      <section id="zknpk">
+      <section id="zknp">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
@@ -234,7 +314,7 @@
                     - információ nyújtása az áldozatsegítésben közreműködő egyéb szervezetek szolgáltatásairól, elérhetőségéről.
                     </p>
                   <p class="lead">
-                    <b>Cím:</b> Budapest,, Laky Adolf u. 36, 1145<br>
+                    <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>
                     <b>Telefon:</b> +36 1 2 11 22 33<br>
                     <b>Mobil:</b> +36703163941<br>
                     <b>Web:</b> www.zknp.hu/<br>
@@ -244,6 +324,99 @@
             </div>
           </div>
         </section>
+
+        <section id="interviews" class="bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+
+                  <h2>Felépülési interjúk</h2>
+                  <p class="lead">
+                  Az alábbiakban a Kék Pont Alapítvány munkatársai által készített interjúkat 
+                  hallhatják olyan emberekkel, akik egykoron drogfüggők voltak, azonban ma már tiszták. 
+                  Életútjaik és kigyógyulásaik története kapaszkodót adhat azoknak akik szeretnének megszabadulni 
+                  a kábítószer függőségüktől.
+                  </p>
+                  <p class="lead">
+                      Első interjúban Bajzáth Sándor addiktológiai konzultánst, felépülő függőt, 
+                      szenvedélybeteg segítőt hallhatják.
+                  </p>
+                  <audio 
+                  src="/audio/Elso_interju-bajzart_sandor_i.mp3"
+                  controls="controls" 
+                  id="elso-i"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <audio 
+                  src="/audio/Elso_interju-a_drog_halojaban_bajzart_sandor_ii.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="elso-ii"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <p class="lead">
+                      A második interjúban  Centgraf Károlyt, felépülő segítőt, a Magyarországi Református 
+                      Egyház kallódó ifjúságot mentő misszió drogterápiás otthonának programvezető munkatársát hallhatják.
+                  </p>
+                  <audio 
+                  src="/audio/Masodik interju_a_drog_halojaban_felepulesi_centgraf_karoly.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="masodik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <p class="lead">
+                      Harmadik interjúnkban egy húszéves fiú őszinte gondolatait hallhatják, az elterelése 
+                      kapcsán beinduló változásokról, azok előzményeiről és az azt követő kihívásokról. 
+                      Az interjúalany névtelenséget kért a sodró hangulatú történetéért cserébe.
+                  </p>
+                  <audio 
+                  src="/audio/Harmadik interjú_a_drog_halojaban_felepulesi_nevtelen_20180924.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="harmadik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <p class="lead">
+                      Negyedik interjúnkban Lőrincz Sándor aka Lörke, a legendás AMD zenekar gitáros-dalszerzője beszél a 
+                      saját felépüléséről és az abban megtalált és megtartott alkotói energiáról. 
+                      Lörke a zenélés mellett profi segítő is a szermentesen.hu oldalon tudhattok meg róla többet.
+                  </p>
+                  <audio 
+                  src="/audio/Negyedik interjú_a_drog_halojaban_Lorinc_Sandor_felepulesi_interju.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="negyedik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <p class="lead">
+                      Ötödik interjúnkban Bajcsi Norbert számára a felépülés egyben megtérés is. Története nagyon sok őszinteséget, 
+                      tudatosságot és önismeretet hordoz magában. Norbi jelenleg egy generál kivitelező cégnél dolgozik, 
+                      józansága és tudatos életvezetése nagyon szép példája az újrakezdésben meglelt hitnek és harmóniának.
+                  </p>
+                  <audio 
+                  src="/audio/Otodik interju_drog_halojaban_bajcsi_181024.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="otodik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+              </div>
+            </div>
+          </div>
+        </section>
+
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
