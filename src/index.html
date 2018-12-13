@@ -119,18 +119,43 @@
               
           // Multiple Markers
           var markers = [
-              ['London Eye, London', 51.503454,-0.119562],
-              ['Palace of Westminster, London', 51.499633,-0.124755]
+              ['A Tiszta Jövőért Közhasznú Alapítvány', 47.502468, 19.110887],
+              ['Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa)', 47.508717, 19.146141], //
+              ['Lelki Egészségvédő Alapítvány (LEA)', 47.519824, 19.112224],
+              ['Zuglói Közbiztonsági Non-Profit Kft', 47.517659, 19.100314]
           ];
                               
           // Info Window Content
           var infoWindowContent = [
               ['<div class="info_content">' +
-              '<h3>London Eye</h3>' +
-              '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
+              '<h4>A Tiszta Jövőért Közhasznú Alapítvány</h4>' +
+              '<p><b>Cím:</b> 1143 Budapest, Tábornok u. 11/B.,<br>'+
+                  '<b>Levélcím:</b> 1392 Budapest, Pf.: 257. <br>'+
+                  '<b>Tel:</b> 06-1-460-9670, <b>fax:</b> 06-1-460-9671<br>' +
+                  '<b>E-mail:</b> tisztajovoert@gmail.com<br>'+
+                  '<b>Web:</b> <a href="http://www.tisztajovoert.hu">http://www.tisztajovoert.hu</a><br></p>'+
+                          '</div>'],
               ['<div class="info_content">' +
-              '<h3>Palace of Westminster</h3>' +
-              '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
+              '<h4>Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa)</h4>' +
+              '<p><b>Cím:</b> 1144 Budapest, Füredi park 6-8,<br>'+
+                '<b>Tel:</b> 364-3013, fax: 220-0391<br>'+
+                '<b>E-mail:</b> tisztajovoert@gmail.com<br>'+
+                '<b>Facebook/zumcsa.zcsk</b><br>'+
+                '<b>A Család- és Gyermekjóléti Központ Készenléti szolgálata:</b> 06-70-310-8585<br></p>' +        '</div>'],
+              ['<div class="info_content">' +
+              '<h4>Lelki Egészségvédő Alapítvány (LEA)</h4>' +
+              '<p><b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>'+
+                    '<b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>'+
+                    '<b>Telefon:</b> <i>Herczeg Andrea</i> +36-1-221-7068 (H-Cs 11-14h)<br>'+
+                    '<b>Üzenetrögzítő és fax:</b> 06-1-384-1961<br>'+
+                    '<b>E-mail:</b> lea.pszichologia@gmail.com<br></p>' +        '</div>'],
+              ['<div class="info_content">' +
+              '<h4>Zuglói Közbiztonsági Non-Profit Kft</h4>' +
+              '<p> <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>'+
+                    '<b>Telefon:</b> +36 1 2 11 22 33<br>'+
+                    '<b>Mobil:</b> +36703163941<br>'+
+                    '<b>Web:</b> www.zknp.hu/<br>'+
+                    '<b>E-mail:</b> adler@zknp.hu<br></p>' +
               '</div>']
           ];
               
@@ -280,17 +305,18 @@
                     A szolgáltatásokat korhatár nélkül vehetik igénybe.
                     
                     Magasan képzett pszichológus, pszichoterapeuta szakembereikkel az alább felsorolt ügyekben fordulhatunk hozzájuk:
-                    -	 problémák 
-                    -	szorongásos zavarok (pánikbetegség, kényszerbetegség, fóbiák,stb.)
-                    -	szexuális zavarok
-                    -	családi és párkapcsolati konfliktusok, krízisek
-                    -	gyermek- és serdülőkori zavarok 
-                    -	álmok, rémálmok
-                    -	evészavarok (anorexia, bulimia) 
-                    -	hangulatzavarok (depresszió, bipoláris zavar)
-                    -	pszichoszomatikus zavarok 
-                    -	(pl. gyomorfekély, vastagbélgyulladás, IBS, magas vérnyomás, asztma, fejfájás) kezelésében.
-                    </p>
+                    <ul class="lead">
+                    <li>problémák</li> 
+                    <li>szorongásos zavarok (pánikbetegség, kényszerbetegség, fóbiák,stb.)</li>
+                    <li>szexuális zavarok</li>
+                    <li>családi és párkapcsolati konfliktusok, krízisek</li>
+                    <li>gyermek- és serdülőkori zavarok</li> 
+                    <li>álmok, rémálmok</li>
+                    <li>evészavarok (anorexia, bulimia)</li> 
+                    <li>hangulatzavarok (depresszió, bipoláris zavar)</li>
+                    <li>pszichoszomatikus zavarok</li> 
+                    <li>(pl. gyomorfekély, vastagbélgyulladás, IBS, magas vérnyomás, asztma, fejfájás) kezelésében.</li>
+                    </ul></p>
                     <p class="lead">
                     <b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>
                     <b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>
@@ -338,14 +364,16 @@
                 <h2>Zuglói Közbiztonsági Non-Profit Kft</h2>
                 <p class="lead">Egyéni áldozatvédelmi tanácsadás:
                     A ZKNP prevenciós koordinátora Adler Katalin egyéni tanácsadási és információnyújtási segítséget biztosít azok számára, akik zuglói lakosként áldozatokká váltak, legyen az testi, szellemi sérülés, érzelmi trauma, gazdasági veszteség, vagy alapvető jogaik sérülése. A segítségnyújtás konkrét formái: 
-                    - tájékoztatás, információszolgáltatás, segítő beszélgetés, 
-                    - lelki támogatás a büntetőeljárást megelőzően, azzal párhuzamosan, és azt követően, 
-                    - jogi, pszichológiai, mentálhigiénés segítségnyújtáshoz való hozzájutás megszervezése, 
-                    - az áldozattá válás megelőzését szolgáló ismeretek nyújtása magánszemélyeknek, intézményeknek, 
-                    - az áldozattá vált személyek érdekérvényesítő szerepének elősegítése, tanácsadás az ismételt áldozattá válás elkerülése érdekében, -
-                     - felvilágosítást nyújtása az esetleges anyagi jellegű támogatások elérésének módjáról, az igénylés feltételeiről, illetve egyéb igénybe vehető ellátásokról, juttatásokról, 
-                    - információ nyújtása az áldozatsegítésben közreműködő egyéb szervezetek szolgáltatásairól, elérhetőségéről.
-                    </p>
+                    <ul class="lead">
+                    <li> tájékoztatás, információszolgáltatás, segítő beszélgetés, </li>
+                    <li> lelki támogatás a büntetőeljárást megelőzően, azzal párhuzamosan, és azt követően, </li>
+                    <li> jogi, pszichológiai, mentálhigiénés segítségnyújtáshoz való hozzájutás megszervezése, </li>
+                    <li> az áldozattá válás megelőzését szolgáló ismeretek nyújtása magánszemélyeknek, intézményeknek, </li>
+                    <li> az áldozattá vált személyek érdekérvényesítő szerepének elősegítése, tanácsadás az ismételt áldozattá válás elkerülése érdekében, </li>
+                    <li>felvilágosítást nyújtása az esetleges anyagi jellegű támogatások elérésének módjáról, az igénylés feltételeiről, illetve egyéb igénybe vehető ellátásokról, juttatásokról, </li>
+                    <li>információ nyújtása az áldozatsegítésben közreműködő egyéb szervezetek szolgáltatásairól, elérhetőségéről.</li>
+                   </ul> 
+                  </p>
                   <p class="lead">
                     <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>
                     <b>Telefon:</b> +36 1 2 11 22 33<br>
@@ -390,7 +418,7 @@
                   preload="none">
                     Your browser does not support the audio element.
                   </audio>
-                  <br>
+                  <br><br>
                   <p class="lead">
                       A második interjúban  Centgraf Károlyt, felépülő segítőt, a Magyarországi Református 
                       Egyház kallódó ifjúságot mentő misszió drogterápiás otthonának programvezető munkatársát hallhatják.
@@ -403,7 +431,7 @@
                   preload="none">
                     Your browser does not support the audio element.
                   </audio>
-                  <br>
+                  <br><br>
                   <p class="lead">
                       Harmadik interjúnkban egy húszéves fiú őszinte gondolatait hallhatják, az elterelése 
                       kapcsán beinduló változásokról, azok előzményeiről és az azt követő kihívásokról. 
@@ -417,7 +445,7 @@
                   preload="none">
                     Your browser does not support the audio element.
                   </audio>
-                  <br>
+                  <br><br>
                   <p class="lead">
                       Negyedik interjúnkban Lőrincz Sándor aka Lörke, a legendás AMD zenekar gitáros-dalszerzője beszél a 
                       saját felépüléséről és az abban megtalált és megtartott alkotói energiáról. 
@@ -431,7 +459,7 @@
                   preload="none">
                     Your browser does not support the audio element.
                   </audio>
-                  <br>
+                  <br><br>
                   <p class="lead">
                       Ötödik interjúnkban Bajcsi Norbert számára a felépülés egyben megtérés is. Története nagyon sok őszinteséget, 
                       tudatosságot és önismeretet hordoz magában. Norbi jelenleg egy generál kivitelező cégnél dolgozik, 

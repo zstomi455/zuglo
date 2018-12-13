@@ -1,8 +1,8 @@
 {
-    "title": "Scrolling Nav",
-    "name": "startbootstrap-scrolling-nav",
-    "version": "4.1.1",
-    "description": "A smooth scrolling navigation HTML template built with Bootstrap",
+    "title": "Felepulesi Terkep",
+    "name": "felepulesiterkep",
+    "version": "0.0.1",
+    "description": "Felepulesi Terkep",
     "keywords": [
         "css",
         "sass",
@@ -11,19 +11,12 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/scrolling-nav",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/issues",
-        "email": "feedback@startbootstrap.com"
-    },
+    "homepage": "https://felepulesiterkep.hu",
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
-    ],
+    "author": "Zsankó Tamás",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-scrolling-nav.git"
+        "url": "https://github.com/zstomi455/zuglo.git"
     },
     "dependencies": {
         "bootstrap": "4.1.1",
