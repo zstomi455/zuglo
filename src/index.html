@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Zuglói KEF Portál">
+    <meta name="author" content="Zsankó Tamás">
 
     <title>Felépülési térkép zuglóban</title>
 
@@ -15,7 +15,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
-  
+
+    <!-- zuglo - Custom styles for this webpage -->
+    <link href="css/custom.css" rel="stylesheet">
+
   </head>
 
   <body id="page-top">
@@ -33,18 +36,22 @@
               <a class="nav-link js-scroll-trigger" href="#about">Bemutatkozás</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Szervezetek</a>
-              <!--<div class="dropdown">
-                  <button class="nav-link dropbtn">Szervezetek</button>
-                  <div class="dropdown-content">
-                    <a class="nav-link js-scroll-trigger"  href="#tisztajovoert">A Tiszta Jövőért Közhasznú Alapítvány</a>
-                    <a class="nav-link js-scroll-trigger"  href="#lea">zknpk us</a>
-                    <a class="nav-link js-scroll-trigger"  href="#zumcsa">Link 3</a>
-                  </div>
-                </div>--> 
+             <!-- <a class="nav-link js-scroll-trigger" href="#zknpk">zknpk</a> -->
+             <div class="dropdown dropleft">
+              <a class="nav-link js-scroll-trigger btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Szervezetek
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <h6 class="dropdown-header">Szervezetek</h6>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#tisztajovoert">A Tiszta Jövőért Közhasznú Alapítvány</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zumcsa">Zumcsa</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#lea">Lelki Egészségvédő Alapítvány (LEA)</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zknp">Zuglói Közbiztonsági Non-Profit Kft</a>
+              </div>
+            </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#zknpk">zknpk</a>
+                <a class="nav-link js-scroll-trigger" href="#interviews">Felépülési Interjúk</a>
             </li>
           </ul>
         </div>
@@ -58,7 +65,7 @@
       </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -73,19 +80,120 @@
               </p>
               <br>
               <br>
-              <img src="terkep-minta.jpg" alt="terkep">
-           <!-- <ul>
-              <li>Clickable nav links that smooth scroll to page sections</li>
-              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-            </ul>-->
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="services" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Térkép</h2>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoYvWmyfdKxz39mAzaRU-4f17cYm5A-xA&language=hu&region=HU&callback=initialize"
+                 async defer></script>
+            </div>
+            <div id="map" class="col-lg-8 mx-auto">
+                <div id="map_wrapper">
+                    <div id="map_canvas" class="mapping"></div>
+                </div>
+            </div>
+          </div>
+  
+        </div>
+      
+
+         <script type="text/javascript">jQuery(function($) {
+          // Asynchronously Load the map API 
+          var script = document.createElement('script');
+          script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyCoYvWmyfdKxz39mAzaRU-4f17cYm5A-xA&language=hu&region=HU&callback=initialize";
+          document.body.appendChild(script);
+      });
+      
+      function initialize() {
+          var map;
+          var bounds = new google.maps.LatLngBounds();
+          var mapOptions = {
+              mapTypeId: 'roadmap'
+          };
+                          
+          // Display a map on the page
+          map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+          map.setTilt(45);
+              
+          // Multiple Markers
+          var markers = [
+              ['A Tiszta Jövőért Közhasznú Alapítvány', 47.502468, 19.110887],
+              ['Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa)', 47.508717, 19.146141], //
+              ['Lelki Egészségvédő Alapítvány (LEA)', 47.519824, 19.112224],
+              ['Zuglói Közbiztonsági Non-Profit Kft', 47.517659, 19.100314]
+          ];
+                              
+          // Info Window Content
+          var infoWindowContent = [
+              ['<div class="info_content">' +
+              '<h4>A Tiszta Jövőért Közhasznú Alapítvány</h4>' +
+              '<p><b>Cím:</b> 1143 Budapest, Tábornok u. 11/B.,<br>'+
+                  '<b>Levélcím:</b> 1392 Budapest, Pf.: 257. <br>'+
+                  '<b>Tel:</b> 06-1-460-9670, <b>fax:</b> 06-1-460-9671<br>' +
+                  '<b>E-mail:</b> tisztajovoert@gmail.com<br>'+
+                  '<b>Web:</b> <a href="http://www.tisztajovoert.hu">http://www.tisztajovoert.hu</a><br></p>'+
+                          '</div>'],
+              ['<div class="info_content">' +
+              '<h4>Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa)</h4>' +
+              '<p><b>Cím:</b> 1144 Budapest, Füredi park 6-8,<br>'+
+                '<b>Tel:</b> 364-3013, fax: 220-0391<br>'+
+                '<b>E-mail:</b> tisztajovoert@gmail.com<br>'+
+                '<b>Facebook/zumcsa.zcsk</b><br>'+
+                '<b>A Család- és Gyermekjóléti Központ Készenléti szolgálata:</b> 06-70-310-8585<br></p>' +        '</div>'],
+              ['<div class="info_content">' +
+              '<h4>Lelki Egészségvédő Alapítvány (LEA)</h4>' +
+              '<p><b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>'+
+                    '<b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>'+
+                    '<b>Telefon:</b> <i>Herczeg Andrea</i> +36-1-221-7068 (H-Cs 11-14h)<br>'+
+                    '<b>Üzenetrögzítő és fax:</b> 06-1-384-1961<br>'+
+                    '<b>E-mail:</b> lea.pszichologia@gmail.com<br></p>' +        '</div>'],
+              ['<div class="info_content">' +
+              '<h4>Zuglói Közbiztonsági Non-Profit Kft</h4>' +
+              '<p> <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>'+
+                    '<b>Telefon:</b> +36 1 2 11 22 33<br>'+
+                    '<b>Mobil:</b> +36703163941<br>'+
+                    '<b>Web:</b> www.zknp.hu/<br>'+
+                    '<b>E-mail:</b> adler@zknp.hu<br></p>' +
+              '</div>']
+          ];
+              
+          // Display multiple markers on a map
+          var infoWindow = new google.maps.InfoWindow(), marker, i;
+          
+          // Loop through our array of markers & place each one on the map  
+          for( i = 0; i < markers.length; i++ ) {
+              var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+              bounds.extend(position);
+              marker = new google.maps.Marker({
+                  position: position,
+                  map: map,
+                  title: markers[i][0]
+              });
+              
+              // Allow each marker to have an info window    
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                      infoWindow.setContent(infoWindowContent[i][0]);
+                      infoWindow.open(map, marker);
+                  }
+              })(marker, i));
+      
+              // Automatically center the map fitting all markers on the screen
+              map.fitBounds(bounds);
+          }
+      
+          // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+          var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+              this.setZoom(14);
+              google.maps.event.removeListener(boundsListener);
+          });
+          
+      }</script>
+      </section>
+
+    <section id="tisztajovoert" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -102,22 +210,34 @@
                   <b>Tel:</b> 06-1-460-9670, <b>fax:</b> 06-1-460-9671<br>
                   <b>E-mail:</b> tisztajovoert@gmail.com<br>
                   <b>Web:</b> <a href="http://www.tisztajovoert.hu">http://www.tisztajovoert.hu</a><br>
-                  <b>Nyitva tartás:</b><br>
-                  hétfő<br>
-                  09:00 - 17:00<br>
-                  kedd<br>
-                  09:00 - 17:00<br>
-                  szerda<br>
-                  09:00 - 17:00<br>
-                  csütörtök<br>
-                  09:00 - 17:00<br>
-                  péntek<br>
-                  09:00 - 15:00<br>
-                  szombat<br>
-                  Zárva<br>
-                  vasárnap<br>
-                  Zárva
                   </p>
+                  <table class="table table-bordered  text-center"><!--table-hover-->
+                      <thead>
+                        <tr>
+                          <th colspan="7">Nyitva tartás:</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">hétfő</th>
+                          <th scope="col">kedd</th>
+                          <th scope="col">szerda</th>
+                          <th scope="col">csütörtök</th>
+                          <th scope="col">péntek</th>
+                          <th scope="col">szombat</th>
+                          <th scope="col">vasárnap</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>09:00 - 17:00</td>
+                          <td>09:00 - 17:00</td>
+                          <td>09:00 - 17:00</td>
+                          <td>09:00 - 17:00</td>
+                          <td>09:00 - 15:00</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                        </tr>
+                      </tbody>
+                    </table>
           </div>
         </div>
       </div>
@@ -137,7 +257,41 @@
                  A kamaszoknak lehetőségük van résztvenni a csoport tagjai által nyújtott mentorációban is. Az egyéni foglalkozások során olyan fiatalokkal végeznek személyre szabott beszélgetést, információnyújtást, tanácsadást, akik vagy önkéntes alapon keresnek meg bennünket, vagy családgondozói javaslatra kerülnek hozzánk. Kicsit kötetlenebb beszélgetésre és teljes diszkréciónkra számíthatnak.
                  A fiatalok Facebook oldalunkon is tarthatják velünk a kapcsolatot, ahol szintén tanácsot kérhetnek és információhoz juthatnak, az őket leginkább érdeklő kérdésekkel kapcsolatban.
                                    </p>
-            </div>
+                <p class="lead">
+                <b>Cím:</b> 1144 Budapest, Füredi park 6-8,<br>
+                <b>Tel:</b> 364-3013, fax: 220-0391<br>
+                <b>E-mail:</b> tisztajovoert@gmail.com<br>
+                <b>Facebook/zumcsa.zcsk</b><br>
+                <b>A Család- és Gyermekjóléti Központ Készenléti szolgálata:</b> 06-70-310-8585<br>
+              </p>
+              <table class="table table-bordered  text-center"><!--table-hover-->
+                <thead>
+                  <tr>
+                    <th colspan="7">Nyitva tartás:</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">hétfő</th>
+                    <th scope="col">kedd</th>
+                    <th scope="col">szerda</th>
+                    <th scope="col">csütörtök</th>
+                    <th scope="col">péntek</th>
+                    <th scope="col">szombat</th>
+                    <th scope="col">vasárnap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>09:00 - 18:00</td>
+                    <td>09:00 - 18:00</td>
+                    <td>09:00 - 12:00</td>
+                    <td>09:00 - 18:00</td>
+                    <td>09:00 - 15:00</td>
+                    <td>Zárva</td>
+                    <td>Zárva</td>
+                  </tr>
+                </tbody>
+              </table>
+             </div>
           </div>
         </div>
       </section>
@@ -151,42 +305,179 @@
                     A szolgáltatásokat korhatár nélkül vehetik igénybe.
                     
                     Magasan képzett pszichológus, pszichoterapeuta szakembereikkel az alább felsorolt ügyekben fordulhatunk hozzájuk:
-                    -	 problémák 
-                    -	szorongásos zavarok (pánikbetegség, kényszerbetegség, fóbiák,stb.)
-                    -	szexuális zavarok
-                    -	családi és párkapcsolati konfliktusok, krízisek
-                    -	gyermek- és serdülőkori zavarok 
-                    -	álmok, rémálmok
-                    -	evészavarok (anorexia, bulimia) 
-                    -	hangulatzavarok (depresszió, bipoláris zavar)
-                    -	pszichoszomatikus zavarok 
-                    -	(pl. gyomorfekély, vastagbélgyulladás, IBS, magas vérnyomás, asztma, fejfájás) kezelésében.
+                    <ul class="lead">
+                    <li>problémák</li> 
+                    <li>szorongásos zavarok (pánikbetegség, kényszerbetegség, fóbiák,stb.)</li>
+                    <li>szexuális zavarok</li>
+                    <li>családi és párkapcsolati konfliktusok, krízisek</li>
+                    <li>gyermek- és serdülőkori zavarok</li> 
+                    <li>álmok, rémálmok</li>
+                    <li>evészavarok (anorexia, bulimia)</li> 
+                    <li>hangulatzavarok (depresszió, bipoláris zavar)</li>
+                    <li>pszichoszomatikus zavarok</li> 
+                    <li>(pl. gyomorfekély, vastagbélgyulladás, IBS, magas vérnyomás, asztma, fejfájás) kezelésében.</li>
+                    </ul></p>
+                    <p class="lead">
+                    <b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>
+                    <b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>
+                    <b>Telefon:</b> <i>Herczeg Andrea</i> +36-1-221-7068 (H-Cs 11-14h)<br>
+                    <b>Üzenetrögzítő és fax:</b> 06-1-384-1961<br>
+                    <b>E-mail:</b> lea.pszichologia@gmail.com<br>
                     </p>
+                    <table class="table table-bordered  text-center"><!--table-hover-->
+                      <thead>
+                        <tr>
+                          <th colspan="7">Nyitva tartás:</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">hétfő</th>
+                          <th scope="col">kedd</th>
+                          <th scope="col">szerda</th>
+                          <th scope="col">csütörtök</th>
+                          <th scope="col">péntek</th>
+                          <th scope="col">szombat</th>
+                          <th scope="col">vasárnap</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>11:00 - 14:00</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                        </tr>
+                      </tbody>
+                    </table>
               </div>
             </div>
           </div>
         </section>
     
     
-      <section id="zknpk">
+      <section id="zknp">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <h2>Zuglói Közbiztonsági Non-Profit Kft</h2>
                 <p class="lead">Egyéni áldozatvédelmi tanácsadás:
                     A ZKNP prevenciós koordinátora Adler Katalin egyéni tanácsadási és információnyújtási segítséget biztosít azok számára, akik zuglói lakosként áldozatokká váltak, legyen az testi, szellemi sérülés, érzelmi trauma, gazdasági veszteség, vagy alapvető jogaik sérülése. A segítségnyújtás konkrét formái: 
-                    - tájékoztatás, információszolgáltatás, segítő beszélgetés, 
-                    - lelki támogatás a büntetőeljárást megelőzően, azzal párhuzamosan, és azt követően, 
-                    - jogi, pszichológiai, mentálhigiénés segítségnyújtáshoz való hozzájutás megszervezése, 
-                    - az áldozattá válás megelőzését szolgáló ismeretek nyújtása magánszemélyeknek, intézményeknek, 
-                    - az áldozattá vált személyek érdekérvényesítő szerepének elősegítése, tanácsadás az ismételt áldozattá válás elkerülése érdekében, -
-                     - felvilágosítást nyújtása az esetleges anyagi jellegű támogatások elérésének módjáról, az igénylés feltételeiről, illetve egyéb igénybe vehető ellátásokról, juttatásokról, 
-                    - információ nyújtása az áldozatsegítésben közreműködő egyéb szervezetek szolgáltatásairól, elérhetőségéről.
-                    </p>
+                    <ul class="lead">
+                    <li> tájékoztatás, információszolgáltatás, segítő beszélgetés, </li>
+                    <li> lelki támogatás a büntetőeljárást megelőzően, azzal párhuzamosan, és azt követően, </li>
+                    <li> jogi, pszichológiai, mentálhigiénés segítségnyújtáshoz való hozzájutás megszervezése, </li>
+                    <li> az áldozattá válás megelőzését szolgáló ismeretek nyújtása magánszemélyeknek, intézményeknek, </li>
+                    <li> az áldozattá vált személyek érdekérvényesítő szerepének elősegítése, tanácsadás az ismételt áldozattá válás elkerülése érdekében, </li>
+                    <li>felvilágosítást nyújtása az esetleges anyagi jellegű támogatások elérésének módjáról, az igénylés feltételeiről, illetve egyéb igénybe vehető ellátásokról, juttatásokról, </li>
+                    <li>információ nyújtása az áldozatsegítésben közreműködő egyéb szervezetek szolgáltatásairól, elérhetőségéről.</li>
+                   </ul> 
+                  </p>
+                  <p class="lead">
+                    <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>
+                    <b>Telefon:</b> +36 1 2 11 22 33<br>
+                    <b>Mobil:</b> +36703163941<br>
+                    <b>Web:</b> www.zknp.hu/<br>
+                    <b>E-mail:</b> adler@zknp.hu<br>
+                  </p>
               </div>
             </div>
           </div>
         </section>
+
+        <section id="interviews" class="bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+
+                  <h2>Felépülési interjúk</h2>
+                  <p class="lead">
+                  Az alábbiakban a Kék Pont Alapítvány munkatársai által készített interjúkat 
+                  hallhatják olyan emberekkel, akik egykoron drogfüggők voltak, azonban ma már tiszták. 
+                  Életútjaik és kigyógyulásaik története kapaszkodót adhat azoknak akik szeretnének megszabadulni 
+                  a kábítószer függőségüktől.
+                  </p>
+                  <p class="lead">
+                      Első interjúban Bajzáth Sándor addiktológiai konzultánst, felépülő függőt, 
+                      szenvedélybeteg segítőt hallhatják.
+                  </p>
+                  <audio 
+                  src="/audio/Elso_interju-bajzart_sandor_i.mp3"
+                  controls="controls" 
+                  id="elso-i"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br>
+                  <audio 
+                  src="/audio/Elso_interju-a_drog_halojaban_bajzart_sandor_ii.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="elso-ii"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br><br>
+                  <p class="lead">
+                      A második interjúban  Centgraf Károlyt, felépülő segítőt, a Magyarországi Református 
+                      Egyház kallódó ifjúságot mentő misszió drogterápiás otthonának programvezető munkatársát hallhatják.
+                  </p>
+                  <audio 
+                  src="/audio/Masodik interju_a_drog_halojaban_felepulesi_centgraf_karoly.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="masodik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br><br>
+                  <p class="lead">
+                      Harmadik interjúnkban egy húszéves fiú őszinte gondolatait hallhatják, az elterelése 
+                      kapcsán beinduló változásokról, azok előzményeiről és az azt követő kihívásokról. 
+                      Az interjúalany névtelenséget kért a sodró hangulatú történetéért cserébe.
+                  </p>
+                  <audio 
+                  src="/audio/Harmadik interjú_a_drog_halojaban_felepulesi_nevtelen_20180924.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="harmadik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br><br>
+                  <p class="lead">
+                      Negyedik interjúnkban Lőrincz Sándor aka Lörke, a legendás AMD zenekar gitáros-dalszerzője beszél a 
+                      saját felépüléséről és az abban megtalált és megtartott alkotói energiáról. 
+                      Lörke a zenélés mellett profi segítő is a szermentesen.hu oldalon tudhattok meg róla többet.
+                  </p>
+                  <audio 
+                  src="/audio/Negyedik interjú_a_drog_halojaban_Lorinc_Sandor_felepulesi_interju.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="negyedik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <br><br>
+                  <p class="lead">
+                      Ötödik interjúnkban Bajcsi Norbert számára a felépülés egyben megtérés is. Története nagyon sok őszinteséget, 
+                      tudatosságot és önismeretet hordoz magában. Norbi jelenleg egy generál kivitelező cégnél dolgozik, 
+                      józansága és tudatos életvezetése nagyon szép példája az újrakezdésben meglelt hitnek és harmóniának.
+                  </p>
+                  <audio 
+                  src="/audio/Otodik interju_drog_halojaban_bajcsi_181024.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="otodik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+              </div>
+            </div>
+          </div>
+        </section>
+
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
