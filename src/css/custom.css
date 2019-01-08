@@ -22,11 +22,79 @@
   }
 
   #map_wrapper {
-    height: 400px;
+    height: 500px;
 }
 
 #map_canvas {
     width: 100%;
     height: 100%;
 }
+
+section {
+  padding: 90px;
  
+}
+
+
+.row {
+  position: relative;
+  z-index: 1;
+}
+
+.row::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .7; 
+  z-index: -1;
+  background-color: #332007;
+}
+ 
+
+.bg {
+  /* The image used */
+  background-image: url("/wallpaper.jpg");
+
+  /* Full height */
+  height: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat-y;
+  /*background-size: cover;*/
+}
+
+.bg-interview {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.bg-interview::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .85; 
+  z-index: -1;
+  background-color: #221503;
+}
+
+audio {
+  width: 100%;
+}
+
+.btn-outline-success::hover {
+  background-color: #32b356;
+}
+.info-content {
+  color: black!important;
+}
+
+.bg-header {
+  background-color: #221503;
+}

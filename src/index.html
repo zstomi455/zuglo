@@ -21,7 +21,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" class="bg">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -47,6 +47,8 @@
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zumcsa">Zumcsa</a>
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#lea">Lelki Egészségvédő Alapítvány (LEA)</a>
                 <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#zknp">Zuglói Közbiztonsági Non-Profit Kft</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#brfk">BRFK XIV. Kerületi Rendőrkapitányság Bűnügyi Osztály</a>
+                <a class="nav-link js-scroll-trigger dropdown-item custom-drpdwn" href="#addikt">Zuglói Egészségügyi Szolgálat Addiktológiai Gondozó és Szakrendelés</a>
               </div>
             </div>
             </li>
@@ -58,14 +60,13 @@
       </div>
     </nav>
 
-    <header class="bg-primary text-white">
+    <header class="bg-header text-white " style="padding: 90px 0 40px;">
       <div class="container text-center">
-        <h1>Felépülési térkép zuglóban</h1>
-        <!--<p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>-->
+        <h1>Felépülési térkép Zuglóban</h1>
       </div>
     </header>
 
-    <section id="about" class="bg-light">
+    <section id="about" class="bg bg-light  text-white">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -89,12 +90,13 @@
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoYvWmyfdKxz39mAzaRU-4f17cYm5A-xA&language=hu&region=HU&callback=initialize"
                  async defer></script>
             </div>
-            <div id="map" class="col-lg-8 mx-auto">
+          </div>
+            <div id="map" class="col-lg-8 mx-auto text-dark">
                 <div id="map_wrapper">
                     <div id="map_canvas" class="mapping"></div>
                 </div>
             </div>
-          </div>
+          
   
         </div>
       
@@ -129,6 +131,7 @@
           var infoWindowContent = [
               ['<div class="info_content">' +
               '<h4>A Tiszta Jövőért Közhasznú Alapítvány</h4>' +
+              '<h6 style="color:red;">Ifjúsági és Felnőtt</h6>'+
               '<p><b>Cím:</b> 1143 Budapest, Tábornok u. 11/B.,<br>'+
                   '<b>Levélcím:</b> 1392 Budapest, Pf.: 257. <br>'+
                   '<b>Tel:</b> 06-1-460-9670, <b>fax:</b> 06-1-460-9671<br>' +
@@ -137,6 +140,7 @@
                           '</div>'],
               ['<div class="info_content">' +
               '<h4>Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa)</h4>' +
+              '<h6 style="color:red;">Ifjúsági</h6>'+
               '<p><b>Cím:</b> 1144 Budapest, Füredi park 6-8,<br>'+
                 '<b>Tel:</b> 364-3013, fax: 220-0391<br>'+
                 '<b>E-mail:</b> tisztajovoert@gmail.com<br>'+
@@ -144,6 +148,7 @@
                 '<b>A Család- és Gyermekjóléti Központ Készenléti szolgálata:</b> 06-70-310-8585<br></p>' +        '</div>'],
               ['<div class="info_content">' +
               '<h4>Lelki Egészségvédő Alapítvány (LEA)</h4>' +
+              '<h6 style="color:red;">Ifjúsági és Felnőtt</h6>'+
               '<p><b>Cím:</b> Budapest, XIV. kerület, Bosnyák tér<br>'+
                     '<b>Postacím:</b> Lelki Egészségvédő Alapítvány 1580 Budapest, Pf. 46.<br>'+
                     '<b>Telefon:</b> <i>Herczeg Andrea</i> +36-1-221-7068 (H-Cs 11-14h)<br>'+
@@ -151,6 +156,7 @@
                     '<b>E-mail:</b> lea.pszichologia@gmail.com<br></p>' +        '</div>'],
               ['<div class="info_content">' +
               '<h4>Zuglói Közbiztonsági Non-Profit Kft</h4>' +
+              '<h6 style="color:red;">Ifjúsági és Felnőtt</h6>'+
               '<p> <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>'+
                     '<b>Telefon:</b> +36 1 2 11 22 33<br>'+
                     '<b>Mobil:</b> +36703163941<br>'+
@@ -193,24 +199,27 @@
       }</script>
       </section>
 
-    <section id="tisztajovoert" class="bg-light">
+    <section id="tisztajovoert" class="bg bg-light  text-white">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>A Tiszta Jövőért Közhasznú Alapítvány:</h2>
+            <h4 style="color:red;">Ifjúsági és Felnőtt</h4>
             <p class="lead">Az 1999-ben alapított szervezet fő küldetése a fiatalok droghasználatának megelőzése, mérséklése, a felmerülő ártalmak csökkentése, egyéni és közösségi szinten egyaránt. A szervezet 2005 óta működik Budapest XIV. kerületében, a szenvedélybetegek alacsonyküszöbű ellátását 2008 óta biztosítják, elsősorban zuglói lakosok részére, melyet ingyenesen és anonim módon vehetnek igénybe. 
                 <p class="lead"><b>Szolgáltatásaikkal céljuk a fiatalok, szerhasználók, szenvedélybetegek és közvetlen környezetük minél szélesebb körének elérése, ellátása, életvitelbeli változás ösztönzése, segítése, az utógondozás biztosítása, a visszaesés megelőzése, a társadalmi szolidaritás növelése.</b></p>
                 <p class="lead">2014-ben új programot indítottak, mely a biztonságosabb szórakozás támogatását tűzte ki célul, megvalósítását Zugló Önkormányzata ellátási szerződés keretében támogatja. Az ártalomcsökkentő és megkereső munkát végző ún. party service szolgáltatással azóta megközelítőleg 5000 főt értek el, a kerület egyik legnagyobb és legforgalmasabb szórakozóhelyén, a Dürer kertben. 
                 A party service program célja a veszélyeztetett, vagy már szereket használó fiatalokkal történő kapcsolatfelvétel, a szerhasználattal összefüggő problémák feltárása, a biztonságosabb szórakozás feltételeinek segítése, a magára hagyott vagy rosszul lévő személyek mielőbbi beazonosítása, és számukra megfelelő segítség nyújtása, a szerhasználat problémássá válásának megelőzése és igény szerint a korai kezelésbe vétel megkönnyítése. 
                 Kiemelt céljuk továbbá a biztonságos szórakozás szemléletmódjának terjesztése a fiatalok és a party szcéna által érintett személyek, szereplők körében. A szolgáltatásban célzottan, információs kiadványokkal, szórólapokkal, ártalomcsökkentő információkkal, és a szerhasználat ártalmait csökkentő anyagokkal (pl.: szőlőcukor, vitaminok, víz, gyorsan felszívódó szénhidrát) látják el a szórakozókat.
-                </p>
+            </p>
               <p class="lead">
                   <b>Cím:</b> 1143 Budapest, Tábornok u. 11/B.,<br>
                   <b>Levélcím:</b> 1392 Budapest, Pf.: 257. <br>
                   <b>Tel:</b> 06-1-460-9670, <b>fax:</b> 06-1-460-9671<br>
                   <b>E-mail:</b> tisztajovoert@gmail.com<br>
-                  <b>Web:</b> <a href="http://www.tisztajovoert.hu">http://www.tisztajovoert.hu</a><br>
-                  </p>
+                  <b>Web:</b> <a href="http://www.tisztajovoert.hu" class="btn-outline-success">
+                    http://www.tisztajovoert.hu</a><br>
+              </p>
+              <p  class="lead">
                   <table class="table table-bordered  text-center"><!--table-hover-->
                       <thead>
                         <tr>
@@ -238,15 +247,17 @@
                         </tr>
                       </tbody>
                     </table>
+                </p>
           </div>
         </div>
       </div>
     </section>
-    <section id="zumcsa">
+    <section id="zumcsa" class=" text-white">
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h2>Zuglói Család- és Gyermekjóléti Központ Zuglói Utcai Ifjúsági Szociális Munkás Csoportja (Zumcsa):</h2>
+              <h4 style="color:red;">Ifjúsági</h4>
               <p class="lead">A Zuglói Család- és Gyermekjóléti Központon belül működő csoport olyan 12-18 év közötti fiatalokkal foglalkozik, akik a szabadidő hasznos eltöltési módjait nem ismerik, vagy nincs rá lehetőségük, hogy hasznosan töltsék el azt. Otthonuktól gyakran távol tartózkodnak, „csellengenek”, szociálisan hátrányos vagy halmozottan hátrányos helyzetűek.
                   Tanulási problémákkal küzdenek, gyakorta túlkorosak, valamint életvezetési tanácsra szorulnak. Legfontosabb feladataink közé tartozik az információnyújtás, terelés egyéb civil intézmények felé, felvilágosítás, preventív programok szervezése (tematikus csoportfoglalkozások az őket foglalkoztató témákkal kapcsolatban: önismereti / személyiségfejlesztő csoport, probléma megoldás-feldolgozás, konfliktuskezelés, egészségügyi- illetve szexuális felvilágosítás, pályatanácsadás, korrepetálás, bűnmegelőzés, drogprevenció, pszichológiai tanácsadás).
                  
@@ -262,8 +273,9 @@
                 <b>Tel:</b> 364-3013, fax: 220-0391<br>
                 <b>E-mail:</b> tisztajovoert@gmail.com<br>
                 <b>Facebook/zumcsa.zcsk</b><br>
+                <b>Web:</b> <a href="http://www.zcsk.hu"  class="btn-outline-success">http://www.zcsk.hu</a><br>
                 <b>A Család- és Gyermekjóléti Központ Készenléti szolgálata:</b> 06-70-310-8585<br>
-              </p>
+              
               <table class="table table-bordered  text-center"><!--table-hover-->
                 <thead>
                   <tr>
@@ -291,16 +303,18 @@
                   </tr>
                 </tbody>
               </table>
+            </p>
              </div>
           </div>
         </div>
       </section>
   
-      <section id="lea" class="bg-light">
+      <section id="lea" class="bg bg-light  text-white">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <h2>Lelki Egészségvédő Alapítvány (LEA)</h2>
+                <h4 style="color:red;">Ifjúsági és Felnőtt</h4>
                 <p class="lead">A Lelki Egészségvédő Alapítvány (LEA) 1993-ban alakult közhasznú szervezetként négy szakember közreműködésével. Az alapítvány 18 éve folyamatosan működteti ambulanciáját. 1998 óta kiemelten közhasznú alapítványként működik.
                     A szolgáltatásokat korhatár nélkül vehetik igénybe.
                     
@@ -357,11 +371,12 @@
         </section>
     
     
-      <section id="zknp">
+      <section id="zknp" class=" text-white">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <h2>Zuglói Közbiztonsági Non-Profit Kft</h2>
+                <h4 style="color:red;">Ifjúsági és Felnőtt</h4>
                 <p class="lead">Egyéni áldozatvédelmi tanácsadás:
                     A ZKNP prevenciós koordinátora Adler Katalin egyéni tanácsadási és információnyújtási segítséget biztosít azok számára, akik zuglói lakosként áldozatokká váltak, legyen az testi, szellemi sérülés, érzelmi trauma, gazdasági veszteség, vagy alapvető jogaik sérülése. A segítségnyújtás konkrét formái: 
                     <ul class="lead">
@@ -378,7 +393,7 @@
                     <b>Cím:</b> Budapest, Laky Adolf u. 36, 1145<br>
                     <b>Telefon:</b> +36 1 2 11 22 33<br>
                     <b>Mobil:</b> +36703163941<br>
-                    <b>Web:</b> www.zknp.hu/<br>
+                    <b>Web:</b> <a href="www.zknp.hu/"  class="btn-outline-success">www.zknp.hu/</a><br>
                     <b>E-mail:</b> adler@zknp.hu<br>
                   </p>
               </div>
@@ -386,24 +401,92 @@
           </div>
         </section>
 
-        <section id="interviews" class="bg-light">
+        <section id="brfk" class="bg bg-light  text-white">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2>BRFK XIV. Kerületi Rendőrkapitányság Bűnügyi Osztály</h2>
+                <h4 style="color:red;">Ifjúsági és Felnőtt</h4>
+                  <p class="lead">
+                      Hoffentrager Zoltán r. hadnagy<br>
+                      <i>drogprevenciós összekötő</i><br>
+                    <b>Cím:</b> 1143 Budapest XIV. kerület Stefánia u. 83-85.<br>
+                    <b>Mobil:</b> +36705021512<br>
+                    <b>E-mail:</b> hoffentragerz@budapest.police.hu<br>
+                  </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="addikt" class=" text-white">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <h2>Zuglói Egészségügyi Szolgálat Addiktológiai Gondozó és Szakrendelés</h2>
+                  <h4 style="color:red;">Felnőtt</h4>
+                  <p class="lead">Az általános járóbeteg-szakellátás a beteg folyamatos ellátását, 
+                    gondozását végző orvos beutalása vagy a beteg jelentkezése alapján, szakorvos által 
+                    végzett egyszeri, illetve alkalomszerű egészségügyi ellátás, továbbá fekvőbeteg-ellátást 
+                    nem igénylő krónikus betegség esetén a folyamatos szakorvosi gondozás.
+                    </p>
+                    <p class="lead">
+                      <b>Cím:</b> Budapest, Hermina út 7.<br>
+                      <b>Telefon:</b> +36 1 469-3800<br>
+                      <b>Betegfelvétel:</b> 7:30-19:30<br>
+                    </p>
+                    <table class="table table-bordered  text-center"><!--table-hover-->
+                      <thead>
+                        <tr>
+                          <th colspan="7">Nyitva tartás:</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">hétfő</th>
+                          <th scope="col">kedd</th>
+                          <th scope="col">szerda</th>
+                          <th scope="col">csütörtök</th>
+                          <th scope="col">péntek</th>
+                          <th scope="col">szombat</th>
+                          <th scope="col">vasárnap</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>7:00 - 20:00</td>
+                          <td>7:00 - 20:00</td>
+                          <td>7:00 - 20:00</td>
+                          <td>7:00 - 20:00</td>
+                          <td>7:00 - 20:00</td>
+                          <td>Zárva</td>
+                          <td>Zárva</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <section id="interviews" class="bg bg-light  text-white">
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto">
 
                   <h2>Felépülési interjúk</h2>
                   <p class="lead">
+                   
                   Az alábbiakban a Kék Pont Alapítvány munkatársai által készített interjúkat 
                   hallhatják olyan emberekkel, akik egykoron drogfüggők voltak, azonban ma már tiszták. 
                   Életútjaik és kigyógyulásaik története kapaszkodót adhat azoknak akik szeretnének megszabadulni 
                   a kábítószer függőségüktől.
                   </p>
-                  <p class="lead">
+                  <p class="lead bg-interview">
                       Első interjúban Bajzáth Sándor addiktológiai konzultánst, felépülő függőt, 
                       szenvedélybeteg segítőt hallhatják.
                   </p>
                   <audio 
-                  src="/audio/Elso_interju-bajzart_sandor_i.mp3"
+                  src="/audio/Elso_interju-a_drog_halojaban_bajzart_sandor_i.mp3"
                   controls="controls" 
                   id="elso-i"
                   preload="none">
@@ -419,7 +502,7 @@
                     Your browser does not support the audio element.
                   </audio>
                   <br><br>
-                  <p class="lead">
+                  <p class="lead bg-interview">
                       A második interjúban  Centgraf Károlyt, felépülő segítőt, a Magyarországi Református 
                       Egyház kallódó ifjúságot mentő misszió drogterápiás otthonának programvezető munkatársát hallhatják.
                   </p>
@@ -432,7 +515,7 @@
                     Your browser does not support the audio element.
                   </audio>
                   <br><br>
-                  <p class="lead">
+                  <p class="lead bg-interview">
                       Harmadik interjúnkban egy húszéves fiú őszinte gondolatait hallhatják, az elterelése 
                       kapcsán beinduló változásokról, azok előzményeiről és az azt követő kihívásokról. 
                       Az interjúalany névtelenséget kért a sodró hangulatú történetéért cserébe.
@@ -446,7 +529,7 @@
                     Your browser does not support the audio element.
                   </audio>
                   <br><br>
-                  <p class="lead">
+                  <p class="lead bg-interview">
                       Negyedik interjúnkban Lőrincz Sándor aka Lörke, a legendás AMD zenekar gitáros-dalszerzője beszél a 
                       saját felépüléséről és az abban megtalált és megtartott alkotói energiáról. 
                       Lörke a zenélés mellett profi segítő is a szermentesen.hu oldalon tudhattok meg róla többet.
@@ -460,7 +543,7 @@
                     Your browser does not support the audio element.
                   </audio>
                   <br><br>
-                  <p class="lead">
+                  <p class="lead bg-interview">
                       Ötödik interjúnkban Bajcsi Norbert számára a felépülés egyben megtérés is. Története nagyon sok őszinteséget, 
                       tudatosságot és önismeretet hordoz magában. Norbi jelenleg egy generál kivitelező cégnél dolgozik, 
                       józansága és tudatos életvezetése nagyon szép példája az újrakezdésben meglelt hitnek és harmóniának.
@@ -471,6 +554,32 @@
                   type="audio/mpeg" 
                   id="otodik"
                   preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <p class="lead bg-interview">
+                      Oláh Péter a Megálló Csoport vezetője beszél a felépülése történetéről és az azt megelőző tizenöt év 
+                      folyamatos anyagozásáról. Távol keleti világjáró kalandok, budapesti egotripek, lecsúszás, felemelkedés és a 
+                      kilencvenes évek Magyarországának hangulata tanulságba, felismerésbe és tapasztalatba ágyazva.
+                  </p>
+                  <audio 
+                  src="/audio/a_drog_halojaban_olah_peter_felepulesi_181119.mp3"
+                  controls
+                  type="audio/mpeg" 
+                  id="hatodik"
+                  preload="none">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <p class="lead bg-interview">
+                      Beszélgetés Szabó Győzővel az örömökről, a vágyak megregulázásáról valamint az életünket 
+                      formáló fordulópontokról és tapasztalatokról. A felvétel az Adna Józan kávézóban készült a 
+                      2018-as Száraz November idején, a beszélgetés Dávid Ferenc (Kék Pont Alapítvány) vezette.                  </p>
+                  <audio 
+                  src="/audio/a_drog_halojaban_szabo_gyozo.mp3" 
+                  controls 
+                  type="audio/mpeg" 
+                  id="hetedik"
+                  preload="none"
+                  >
                     Your browser does not support the audio element.
                   </audio>
               </div>
